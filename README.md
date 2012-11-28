@@ -1,13 +1,8 @@
 # Estimate Reading Time
 
-[![Build Status](https://secure.travis-ci.org/garethrees/readingtime.png)](http://travis-ci.org/garethrees/readingtime)
-
-
-I use [iA Writer](http://iawriter.com "iA Writer") and find the *estimated reading time* feature pretty handy. I thought it would be cool to add at the top of my blog articles on the web as [others](http://nicepaul.com "The personal blog of @nicepaul") do.
-
 ## How to Use
 
-[readingtime](http://github.com/garethrees/readingtime "Gem to estimate reading time") extends the Ruby String class, so you can call `reading_time` on any `String` object.
+[readingtime](https://github.com/igorkasyanchuk/readingtime "Gem to estimate reading time") extends the Ruby String class, so you can call `reading_time` on any `String` object.
 
 ### Install
 
@@ -46,10 +41,19 @@ You can also send in options to modify the formatting.
 	# Default output
 	@article.body.reading_time :format => :basic
 	=> "03:36"
-	
+
 	# Longer text output
 	@article.body.reading_time :format => :long
 	=> "3 minutes and 36 seconds"
+
+	# Full text output
+	@article.body.reading_time :format => :full
+	=> "1 hr 3 mins 36 secs"
+
+	# Raw output
+	@article.body.reading_time :format => :raw
+	=> [1, 12, 23]
+	# [hours, minutes, seconds]
 
 ## Thanks
 
